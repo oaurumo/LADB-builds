@@ -35,7 +35,8 @@ jobs:
       - uses: actions/setup-java@v3
         with:
           distribution: temurin
-          java-version: 17
+          # java-version: 17
+          java-version: 11
 
       #----------------------------------------
       # 3. Android SDK + Build‑Tools + platform
@@ -160,4 +161,5 @@ jobs:
           name: Release ${{ needs.build.outputs.build_tag }}
           files: dist/signed.apk
         env:
+
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
